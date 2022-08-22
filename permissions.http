@@ -1,0 +1,15 @@
+
+### Gandalf ugm5sdh3vu7dhbcnuxat5k4hxrzrwscgavt5ldojsp4x6yu2ur6a
+GET https://vsrm.codedev.ms/onetocny/_apis/Release/projects
+    ?artifactType=Build
+    &artifactSourceId=baa48759-cdc2-4204-87e1-6350edadd007%3A1
+Authorization: Basic OnBycDdtYWhqencybmtraWYyMmhyY3p1Zmd3M3JybTVzaGRrMzRocHczemxneTU1Z2NqeXE=
+
+
+
+### Saruman ntpxopii76edwmncdqpqdy6rhdhayr5pbtlvxfarl4sedvfykvza
+GET https://vsrm.codedev.ms/onetocny/_apis/Release/projects
+    ?artifactType=Build
+    &artifactSourceId=baa48759-cdc2-4204-87e1-6350edadd007%3A1
+Authorization: Basic OnUzZ2t3eTRsbnVtY2preGlteW41ZXlmNDJidGxkcWhsdHBlZnlpamo2bHh5dnZydm1mcnE=
+

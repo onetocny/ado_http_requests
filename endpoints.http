@@ -1,5 +1,5 @@
-POST https://codedev.ms/myorg/0b06a0df-f737-47db-a499-6a6925b0c01b/_apis/serviceendpoint/endpointproxy?endpointId=
-Authorization: Basic OnBycDdtYWhqencybmtraWYyMmhyY3p1Zmd3M3JybTVzaGRrMzRocHczemxneTU1Z2NqeXE=
+POST {{base_url}}/{{organization}}/{{project}}/_apis/serviceendpoint/endpointproxy?endpointId=
+Authorization: Basic :{{PAT}}
 Content-type: application/json
 Accept: application/json;api-version=6.0-preview.1;excludeUrls=true;enumsAsNumbers=true;msDateFormat=true;noArrayWrap=true
 

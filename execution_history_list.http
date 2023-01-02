@@ -1,0 +1,6 @@
+@endpointId = 7b55c775-1047-4b32-bdc2-c03bbe3ba024
+
+GET {{base_url}}/{{organization}}/{{project}}/_apis/serviceendpoint/{{endpointId}}/executionhistory?api-version=7.0
+Authorization: Basic :{{PAT}}
+Content-type: application/json
+Accept: application/json;api-version=6.0-preview.1;excludeUrls=true;enumsAsNumbers=true;msDateFormat=true;noArrayWrap=true

@@ -1,0 +1,12 @@
+{
+    "DataSourceDetails":{
+       "DataSourceName":"AzureRMContainerRegistriesWithResourceGroup",
+       "Parameters":{
+          "connection":"1deba2f3-7588-4572-a000-f9d96c3b03b3",
+          "resourcegroup":"onetocny_rg"
+       }
+    },
+    "ResultTransformationDetails":{
+       "ResultTemplate":"{\"Value\":\"{{{properties.loginServer}}}\",\"DisplayValue\":\"{{{name}}}\"}"
+    }
+ }

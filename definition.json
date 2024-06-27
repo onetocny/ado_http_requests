@@ -1,0 +1,126 @@
+{
+    "name": "New release pipeline russ",
+    "comment": "test",
+    "environments": [
+        {
+            "name": "Stage 35",
+            "runOptions": {},
+            "environmentOptions": {
+                "emailNotificationType": "OnlyOnFailure",
+                "emailRecipients": "release.environment.owner;release.creator",
+                "skipArtifactsDownload": false,
+                "timeoutInMinutes": 0,
+                "enableAccessToken": false,
+                "publishDeploymentStatus": true,
+                "badgeEnabled": false,
+                "autoLinkWorkItems": false,
+                "pullRequestDeploymentEnabled": false
+            },
+            "retentionPolicy": {
+                "daysToKeep": 30,
+                "releasesToKeep": 3,
+                "retainBuild": true
+            },
+            "preDeployApprovals": {
+                "approvals": [
+                    {
+                        "rank": 1,
+                        "isAutomated": true,
+                        "isNotificationOn": false,
+                        "id": 1
+                    }
+                ],
+                "approvalOptions": {
+                    "requiredApproverCount": null,
+                    "releaseCreatorCanBeApprover": false,
+                    "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                    "enforceIdentityRevalidation": false,
+                    "timeoutInMinutes": 0,
+                    "executionOrder": "beforeGates"
+                }
+            },
+            "postDeployApprovals": {
+                "approvals": [
+                    {
+                        "rank": 1,
+                        "isAutomated": true,
+                        "isNotificationOn": false,
+                        "id": 3
+                    }
+                ],
+                "approvalOptions": {
+                    "requiredApproverCount": null,
+                    "releaseCreatorCanBeApprover": false,
+                    "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+                    "enforceIdentityRevalidation": false,
+                    "timeoutInMinutes": 0,
+                    "executionOrder": "afterSuccessfulGates"
+                }
+            },
+            "deployPhases": [
+                {
+                    "deploymentInput": {
+                        "parallelExecution": {
+                            "parallelExecutionType": "none"
+                        },
+                        "agentSpecification": null,
+                        "skipArtifactsDownload": false,
+                        "artifactsDownloadInput": {
+                            "downloadInputs": []
+                        },
+                        "queueId": 1,
+                        "demands": [],
+                        "enableAccessToken": false,
+                        "timeoutInMinutes": 0,
+                        "jobCancelTimeoutInMinutes": 1,
+                        "condition": "succeeded()",
+                        "overrideInputs": {}
+                    },
+                    "rank": 1,
+                    "phaseType": "agentBasedDeployment",
+                    "name": "Agent job",
+                    "refName": null,
+                    "workflowTasks": [
+                        {
+                            "environment": {},
+                            "taskId": "e213ff0f-5d5c-4791-802d-52ea3e7be1f1",
+                            "version": "2.*",
+                            "name": "PowerShell Script",
+                            "refName": "",
+                            "enabled": true,
+                            "alwaysRun": false,
+                            "continueOnError": false,
+                            "timeoutInMinutes": 0,
+                            "retryCountOnTaskFailure": 0,
+                            "definitionType": "task",
+                            "overrideInputs": {},
+                            "condition": "succeeded()",
+                            "inputs": {
+                                "targetType": "inline",
+                                "filePath": "",
+                                "arguments": "",
+                                "script": "# Write your PowerShell commands here.\n\nWrite-Host \"Hello World\"\n",
+                                "errorActionPreference": "stop",
+                                "warningPreference": "default",
+                                "informationPreference": "default",
+                                "verbosePreference": "default",
+                                "debugPreference": "default",
+                                "progressPreference": "silentlyContinue",
+                                "failOnStderr": "false",
+                                "showWarnings": "false",
+                                "ignoreLASTEXITCODE": "false",
+                                "pwsh": "false",
+                                "workingDirectory": "",
+                                "runScriptInSeparateScope": "false"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "tags": [],
+    "path": "\\",
+    "releaseNameFormat": "Release-$(rev:r)",
+    "description": ""
+}

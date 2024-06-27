@@ -1,0 +1,30 @@
+@registry=onetocny001.azurecr.io
+@url=https://{{registry}}/oauth2/exchange
+@tenant=7e527386-53a9-4ca0-8a2e-981cf1f68693
+@aad_access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyIsImtpZCI6Ii1LSTNROW5OUjdiUm9meG1lWm9YcWJIWkdldyJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuYXp1cmUuY29tLyIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzdlNTI3Mzg2LTUzYTktNGNhMC04YTJlLTk4MWNmMWY2ODY5My8iLCJpYXQiOjE2Nzc0MzAwMDUsIm5iZiI6MTY3NzQzMDAwNSwiZXhwIjoxNjc3NDMzOTA1LCJhaW8iOiJFMlpnWUxnUXN6Vk53c3pLKzZaQlFWM2R0ZWs2QUE9PSIsImFwcGlkIjoiY2I5NjAzZGQtNGZjZC00MWViLWJjOGUtNDcwOWUwY2QzNTg1IiwiYXBwaWRhY3IiOiIyIiwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvN2U1MjczODYtNTNhOS00Y2EwLThhMmUtOTgxY2YxZjY4NjkzLyIsImlkdHlwIjoiYXBwIiwib2lkIjoiNmI4MTU5OTQtNzAzNi00ZTI4LTlhNTUtOWMxYjUwZTU3ZDZhIiwicmgiOiIwLkFTQUFobk5TZnFsVG9FeUtMcGdjOGZhR2swWklmM2tBdXRkUHVrUGF3ZmoyTUJNZ0FBQS4iLCJzdWIiOiI2YjgxNTk5NC03MDM2LTRlMjgtOWE1NS05YzFiNTBlNTdkNmEiLCJ0aWQiOiI3ZTUyNzM4Ni01M2E5LTRjYTAtOGEyZS05ODFjZjFmNjg2OTMiLCJ1dGkiOiJjUGRmU2U1eVZVT1IxS2E0TnJFc0FBIiwidmVyIjoiMS4wIiwieG1zX3RjZHQiOjE0OTE4OTYwMDZ9.YyGgaK7bPaikWREOyioqfhfTaS-VeqvXeoW2VXgwmqF7Sni7U-e1XYeMTZ0iUy4GPpo_mIhK9TxcXy1BzCmVOA_biLehKC8SLM6qs02m0GiMVe3YscP8AfuFSYSjo_v5z4wesM69dH9zr22aO1cXLZdHpqRhZ2lGEgDFLD9tL-0lehKaMReKlhyVSNNRxR6pEHd3nNGcg82wpoEEKdN8NYJCBQiIlEbqt81P5-ZKJArpzOTbz2AbF-DHo07T0Cgf-rD-bcJ8F05laFBYPhPzoW5nXJG8SMAR7QJq2VaNS8YgR0eJfLHfhl-K8wGNeogttuwv7WRAzikeMBg-eT_Twg
+
+# @name acr_refresh_token_request
+POST {{url}}
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=access_token&service={{registry}}&tenant={{tenant}}&access_token={{aad_access_token}}
+
+###
+
+@acr_refresh_token = {{acr_refresh_token_request.response.body.refresh_token}}
+@scope=registry:catalog:*
+
+# @name acr_access_token_request
+POST https://{{registry}}/oauth2/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=refresh_token&service={{registry}}&scope={{scope}}&refresh_token={{acr_refresh_token}}
+
+###
+
+@acr_access_token = {{acr_access_token_request.response.body.access_token}}
+
+
+# @name acr_catalog
+GET https://{{registry}}/v2/_catalog
+#Authorization: Bearer {{acr_access_token}}

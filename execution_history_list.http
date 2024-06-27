@@ -1,4 +1,4 @@
-@endpointId = 7b55c775-1047-4b32-bdc2-c03bbe3ba024
+@endpointId = f4e3cc94-aa49-486d-b7a1-8ac31b407991
 
 GET {{base_url}}/{{organization}}/{{project}}/_apis/serviceendpoint/{{endpointId}}/executionhistory?api-version=7.0
 Authorization: Basic :{{PAT}}

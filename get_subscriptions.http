@@ -1,0 +1,3 @@
+GET https://commerce1.vscommerce.vsts.me/_apis/Subscription/Subscription?queryAcrossTenants=True
+Authorization: Basic :{{PAT}}
+Content-type: application/json

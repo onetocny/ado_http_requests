@@ -1,0 +1,18 @@
+@endpointId = 14c97dd6-9f3f-4236-b30f-739c9a384da7
+@url = {{base_url}}/{{organization}}/{{project}}/_apis/serviceendpoint/endpointproxy?endpointId={{endpointId}}
+
+POST {{url}}
+Authorization: Basic :{{PAT}}
+Content-type: application/json
+Accept: application/json;api-version=6.0-preview.1;excludeUrls=true;enumsAsNumbers=true;msDateFormat=true;noArrayWrap=true
+
+< AzureRMContainerRegistriesWithResourceGroup.json
+
+###
+
+POST {{url}}
+Authorization: Basic :{{PAT}}
+Content-type: application/json
+Accept: application/json;api-version=6.0-preview.1;excludeUrls=true;enumsAsNumbers=true;msDateFormat=true;noArrayWrap=true
+
+< AzureContainerRegistryRepositories.json

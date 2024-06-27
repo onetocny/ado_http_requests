@@ -1,0 +1,35 @@
+@url = https://vsrm.codedev.ms/onetocny//playground/_apis/release/releases/1?api-version=7.0
+
+# bpeoup364n3urfacvwzcqcwtcccbsa5lwkxbaajshmcppor2owpq
+
+PUT {{url}}
+Authorization: Basic :{{PAT}}
+Content-type: application/json
+Accept: application/json;api-version=6.0-preview.1;excludeUrls=true;enumsAsNumbers=true;msDateFormat=true;noArrayWrap=true
+
+< UpdateRelease.json
+
+###
+
+# @name get_release
+
+GET {{url}}
+Authorization: Basic :{{PAT}}
+
+###
+
+@release = {{get_release.response.body.$}}
+
+
+PUT {{url}}
+Authorization: Basic :{{PAT}}
+Content-type: application/json
+Accept: application/json;api-version=6.0-preview.1;excludeUrls=true;enumsAsNumbers=true;msDateFormat=true;noArrayWrap=true
+
+{{release}}
+
+###
+
+GET https://vsrm.codedev.ms/onetocny/playground/_apis/release/definitions
+Authorization: Basic :{{PAT}}
+Content-type: application/json

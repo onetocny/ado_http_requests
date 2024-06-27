@@ -1,0 +1,22 @@
+@url = https://vsrm.dev.azure.com/powerbi//PowerBIClients/_apis/release/releases/540656?api-version=7.1-preview
+@powerbi_pat = bpeoup364n3urfacvwzcqcwtcccbsa5lwkxbaajshmcppor2owpq
+
+@url2 = https://vsrm.codedev.ms/onetocny//playground/_apis/release/releases/1?api-version=7.1-preview
+
+
+# @name get_release
+
+GET {{url}}
+Authorization: Basic :{{powerbi_pat}}
+
+###
+
+@release = {{get_release.response.body.$}}
+
+
+PUT {{url2}}
+Authorization: Basic :{{PAT}}
+Content-type: application/json
+Accept: application/json;api-version=6.0-preview.1;excludeUrls=true;enumsAsNumbers=true;msDateFormat=true;noArrayWrap=true
+
+{{release}}

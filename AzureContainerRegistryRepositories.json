@@ -1,0 +1,13 @@
+{
+    "DataSourceDetails":{
+       "DataSourceName":"AzureContainerRegistryRepositories",
+       "Parameters":{
+          "connection":"1deba2f3-7588-4572-a000-f9d96c3b03b3",
+          "resourcegroup":"onetocny_rg",
+          "registryurl":"onetocny001.azurecr.io"
+       }
+    },
+    "ResultTransformationDetails":{
+       "ResultTemplate":"{ Value : \"{{defaultResultKey}}\", DisplayValue : \"{{{defaultResultKey}}}\" }"
+    }
+ }

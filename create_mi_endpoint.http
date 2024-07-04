@@ -1,0 +1,99 @@
+@name = MI09
+@tenantId = 771d663d-da6c-44bd-bc0a-e9a46bc4bfb6
+@subscriptionId = d0187ece-f402-4226-8c61-7c7de4d6054a
+@scope = /subscriptions/{{subscriptionId}}
+@subscriptionName = razvanmanole-directs
+@servicePrincipalId = 962cbeaf-6fbd-476b-87e2-aa2d8ee1bacc
+
+###
+
+# @name get_project
+
+GET {{base_url}}/{{organization}}/_apis/projects?api-version=7.1-preview.4
+Authorization: Basic :{{PAT}}
+Content-type: application/json
+
+###
+
+@projectId = {{get_project.response.body.$[value][0].id}}
+
+# @name create_endpoint
+
+POST {{base_url}}/{{organization}}/{{project}}/_apis/serviceendpoint/endpoints
+Authorization: Basic :{{PAT}}
+Content-type: application/json
+Accept: application/json;api-version=6.0-preview.1;excludeUrls=true;enumsAsNumbers=true;msDateFormat=true;noArrayWrap=true
+
+{
+	"authorization": {
+		"parameters": {
+			"tenantid": "{{tenantId}}",
+			"serviceprincipalid": "{{servicePrincipalId}}",
+			"scope": "{{scope}}"
+		},
+		"scheme": "WorkloadIdentityFederation"
+	},
+	"data": {
+		"environment": "AzureCloud",
+		"scopeLevel": "Subscription",
+		"creationMode": "Automatic",
+		"subscriptionName": "{{subscriptionName}}",
+		"subscriptionId": "{{subscriptionId}}",
+		"identityType": "ManagedIdentity"
+	},
+	"isShared": false,
+	"isOutdated": false,
+	"name": "{{name}}",
+	"owner": "library",
+	"type": "azurerm",
+	"url": "https://management.azure.com/",
+	"description": null,
+	"serviceEndpointProjectReferences": [
+		{
+			"description": "",
+			"name": "{{name}}",
+			"projectReference": {
+				"id": "{{projectId}}",
+				"name": "{{project}}"
+			}
+		}
+	]
+}
+
+###
+
+@endpointId = {{create_endpoint.response.body.id}}
+
+# @name get_endpoint
+
+GET {{base_url}}/{{organization}}/{{project}}/_apis/serviceendpoint/endpoints/{{endpointId}}
+Authorization: Basic :{{PAT}}
+Content-type: application/json
+Accept: application/json;api-version=6.0-preview.1;excludeUrls=true;enumsAsNumbers=true;msDateFormat=true;noArrayWrap=true
+
+### 
+
+@endpoint = {{get_endpoint.response.body.$}}
+
+PUT {{base_url}}/{{organization}}/_apis/serviceendpoint/endpoints/{{endpointId}}?api-version=7.1-preview.4
+Authorization: Basic :{{PAT}}
+Content-type: application/json
+
+{{endpoint}}
+
+###
+
+POST {{base_url}}/{{organization}}/{{project}}/_apis/serviceendpoint/endpointproxy?endpointId={{endpointId}}&api-version=7.1-preview.1
+Authorization: Basic :{{PAT}}
+Content-type: application/json
+
+{
+	"dataSourceDetails": {
+		"dataSourceName": "TestConnection"
+	}
+}
+
+###
+
+DELETE {{base_url}}/{{organization}}/_apis/serviceendpoint/endpoints/{{endpointId}}?projectIds={{projectId}}&api-version=7.1-preview.4
+Authorization: Basic :{{PAT}}

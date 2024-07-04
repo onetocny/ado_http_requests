@@ -1,0 +1,6 @@
+@endpointId = ea210d68-1ae1-4120-9e34-62eddbb4d4d0
+
+GET {{base_url}}/{{organization}}/{{project}}/_apis/serviceendpoint/endpoints/{{endpointId}}
+Authorization: Basic :{{PAT}}
+Content-type: application/json
+Accept: application/json;api-version=6.0-preview.1;excludeUrls=true;enumsAsNumbers=true;msDateFormat=true;noArrayWrap=true

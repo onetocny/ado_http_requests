@@ -1,0 +1,2 @@
+DELETE {{base_url}}/{{organization}}/_apis/serviceendpoint/endpoints/c6d853ab-685a-464d-8dd3-b6539d68f00a?projectIds=860f2b9c-054d-4f97-9d73-a307a160ea47&api-version=7.1-preview.4
+Authorization: Basic :{{PAT}}

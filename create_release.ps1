@@ -3,7 +3,7 @@ Param(
 [string]$project = "playground", 
 [string]$keepForever = "true", 
 [string]$user = "", 
-[string]$token = "y4bm73xfsoasgkjhkmq4qufr2hlhkgidqxgci7aygxwzukzwznwq" ) 
+[string]$token = "" ) 
 
 $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $user,$token)))
 

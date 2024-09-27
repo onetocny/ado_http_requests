@@ -1,7 +1,7 @@
 @registry=onetocny001.azurecr.io
 @url=https://{{registry}}/oauth2/exchange
 @tenant=7e527386-53a9-4ca0-8a2e-981cf1f68693
-@aad_access_token=xxx
+@aad_access_token=
 
 # @name acr_refresh_token_request
 POST {{url}}

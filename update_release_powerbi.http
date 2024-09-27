@@ -1,5 +1,5 @@
 @url = https://vsrm.dev.azure.com/powerbi//PowerBIClients/_apis/release/releases/540656?api-version=7.1-preview
-@powerbi_pat = xxx
+@powerbi_pat = 
 
 @url2 = https://vsrm.codedev.ms/onetocny//playground/_apis/release/releases/1?api-version=7.1-preview
 

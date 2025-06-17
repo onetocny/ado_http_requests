@@ -1,4 +1,4 @@
-@endpointId = ea210d68-1ae1-4120-9e34-62eddbb4d4d0
+@endpointId = 262cf68a-7075-41d1-9a84-ed82aaf00a8d
 
 GET {{base_url}}/{{organization}}/{{project}}/_apis/serviceendpoint/endpoints/{{endpointId}}
 Authorization: Basic :{{PAT}}

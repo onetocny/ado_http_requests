@@ -1,0 +1,754 @@
+@releaseId = 8
+@environmentId = 8
+
+# @name patch_env
+
+PATCH https://vsrm.codedev.ms/{{organization}}/{{project}}/_apis/Release/releases/{{releaseId}}/environments/{{environmentId}}?api-version=5.1-preview.6
+Authorization: Basic :{{PAT}}
+Content-type: application/json
+Accept: application/json;api-version=6.0-preview.1;excludeUrls=true;enumsAsNumbers=true;msDateFormat=true;noArrayWrap=true
+
+{
+    "comment": "",
+    "keepForever": false,
+    "manualEnvironments": [],
+    "status": 8,
+    "name": ""
+}
+
+###
+
+# @name get_release
+
+
+GET https://vsrm.codedev.ms/{{organization}}/{{project}}/_apis/Release/releases/{{releaseId}}
+Authorization: Basic :{{PAT}}
+Content-type: application/json
+Accept: application/json;api-version=6.0-preview.1;excludeUrls=true;enumsAsNumbers=true;msDateFormat=true;noArrayWrap=true
+
+###
+
+DELETE https://vsrm.codedev.ms/{{organization}}/{{project}}/_apis/Release/releases/6?comment=
+Authorization: Basic :{{PAT}}
+Content-type: application/json
+Accept: application/json;api-version=6.0-preview.1;excludeUrls=true;enumsAsNumbers=true;msDateFormat=true;noArrayWrap=true
+
+
+###
+
+PUT https://vsrm.codedev.ms/{{organization}}/{{project}}/_apis/Release/releases/{{releaseId}}?api-version=5.1
+Authorization: Basic :{{PAT}}
+Content-type: application/json
+Accept: application/json;api-version=6.0-preview.1;excludeUrls=true;enumsAsNumbers=true;msDateFormat=true;noArrayWrap=true
+
+{
+"id": 4,
+"name": "Release-4",
+"status": "abandoned",
+"createdOn": "2024-08-05T12:54:21.613Z",
+"modifiedOn": "2024-08-05T13:20:52.877Z",
+"modifiedBy": {
+"displayName": "onetocny",
+"url": "https://sps1.vssps.vsts.me/A00cfd9d3-ee6a-4b21-ad5a-649918f7fb20/_apis/Identities/049fd3b2-2440-61a3-91d0-bfeca92db114",
+"_links": {
+"avatar": {
+"href": "https://codedev.ms/onetocny/_apis/GraphProfile/MemberAvatars/msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0"
+}
+},
+"id": "049fd3b2-2440-61a3-91d0-bfeca92db114",
+"uniqueName": "onetocny@outlook-int.com",
+"imageUrl": "https://codedev.ms/onetocny/_apis/GraphProfile/MemberAvatars/msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0",
+"descriptor": "msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0"
+},
+"createdBy": {
+"displayName": "onetocny",
+"url": "https://sps1.vssps.vsts.me/A00cfd9d3-ee6a-4b21-ad5a-649918f7fb20/_apis/Identities/049fd3b2-2440-61a3-91d0-bfeca92db114",
+"_links": {
+"avatar": {
+"href": "https://codedev.ms/onetocny/_apis/GraphProfile/MemberAvatars/msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0"
+}
+},
+"id": "049fd3b2-2440-61a3-91d0-bfeca92db114",
+"uniqueName": "onetocny@outlook-int.com",
+"imageUrl": "https://codedev.ms/onetocny/_apis/GraphProfile/MemberAvatars/msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0",
+"descriptor": "msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0"
+},
+"createdFor": {
+"displayName": "onetocny",
+"url": "https://sps1.vssps.vsts.me/A00cfd9d3-ee6a-4b21-ad5a-649918f7fb20/_apis/Identities/049fd3b2-2440-61a3-91d0-bfeca92db114",
+"_links": {
+"avatar": {
+"href": "https://codedev.ms/onetocny/_apis/GraphProfile/MemberAvatars/msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0"
+}
+},
+"id": "049fd3b2-2440-61a3-91d0-bfeca92db114",
+"uniqueName": "onetocny@outlook-int.com",
+"imageUrl": "https://codedev.ms/onetocny/_apis/GraphProfile/MemberAvatars/msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0",
+"descriptor": "msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0"
+},
+"environments": [
+{
+"id": 4,
+"releaseId": 4,
+"name": "Stage 1",
+"status": "rejected",
+"variables": {},
+"variableGroups": [],
+"preDeployApprovals": [
+{
+"id": 8,
+"revision": 1,
+"approvalType": "preDeploy",
+"createdOn": "2024-08-05T12:54:25.333Z",
+"modifiedOn": "2024-08-05T12:54:25.35Z",
+"status": "approved",
+"comments": "",
+"isAutomated": true,
+"isNotificationOn": false,
+"trialNumber": 1,
+"attempt": 1,
+"rank": 1,
+"release": {
+"id": 4,
+"name": "Release-4",
+"url": "https://vsrm.codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_apis/Release/releases/4",
+"_links": {}
+},
+"releaseDefinition": {
+"id": 1,
+"name": "New release pipeline",
+"path": "\\",
+"projectReference": null,
+"url": "https://vsrm.codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_apis/Release/definitions/1",
+"_links": {}
+},
+"releaseEnvironment": {
+"id": 4,
+"name": "Stage 1",
+"url": "https://vsrm.codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_apis/Release/releases/4/environments/4",
+"_links": {}
+},
+"url": "https://vsrm.codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_apis/Release/approvals/8"
+},
+{
+"id": 10,
+"revision": 1,
+"approvalType": "preDeploy",
+"createdOn": "2024-08-05T13:05:41.883Z",
+"modifiedOn": "2024-08-05T13:05:41.95Z",
+"status": "approved",
+"comments": "",
+"isAutomated": true,
+"isNotificationOn": false,
+"trialNumber": 2,
+"attempt": 2,
+"rank": 1,
+"release": {
+"id": 4,
+"name": "Release-4",
+"url": "https://vsrm.codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_apis/Release/releases/4",
+"_links": {}
+},
+"releaseDefinition": {
+"id": 1,
+"name": "New release pipeline",
+"path": "\\",
+"projectReference": null,
+"url": "https://vsrm.codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_apis/Release/definitions/1",
+"_links": {}
+},
+"releaseEnvironment": {
+"id": 4,
+"name": "Stage 1",
+"url": "https://vsrm.codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_apis/Release/releases/4/environments/4",
+"_links": {}
+},
+"url": "https://vsrm.codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_apis/Release/approvals/10"
+},
+{
+"id": 12,
+"revision": 1,
+"approvalType": "preDeploy",
+"createdOn": "2024-08-05T13:06:33.07Z",
+"modifiedOn": "2024-08-05T13:06:33.08Z",
+"status": "approved",
+"comments": "",
+"isAutomated": true,
+"isNotificationOn": false,
+"trialNumber": 3,
+"attempt": 3,
+"rank": 1,
+"release": {
+"id": 4,
+"name": "Release-4",
+"url": "https://vsrm.codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_apis/Release/releases/4",
+"_links": {}
+},
+"releaseDefinition": {
+"id": 1,
+"name": "New release pipeline",
+"path": "\\",
+"projectReference": null,
+"url": "https://vsrm.codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_apis/Release/definitions/1",
+"_links": {}
+},
+"releaseEnvironment": {
+"id": 4,
+"name": "Stage 1",
+"url": "https://vsrm.codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_apis/Release/releases/4/environments/4",
+"_links": {}
+},
+"url": "https://vsrm.codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_apis/Release/approvals/12"
+}
+],
+"postDeployApprovals": [],
+"preApprovalsSnapshot": {
+"approvals": [
+{
+"rank": 1,
+"isAutomated": true,
+"isNotificationOn": false,
+"id": 0
+}
+],
+"approvalOptions": {
+"requiredApproverCount": null,
+"releaseCreatorCanBeApprover": false,
+"autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+"enforceIdentityRevalidation": false,
+"timeoutInMinutes": 0,
+"executionOrder": "beforeGates"
+}
+},
+"postApprovalsSnapshot": {
+"approvals": [
+{
+"rank": 1,
+"isAutomated": true,
+"isNotificationOn": false,
+"id": 0
+}
+],
+"approvalOptions": {
+"requiredApproverCount": null,
+"releaseCreatorCanBeApprover": false,
+"autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+"enforceIdentityRevalidation": false,
+"timeoutInMinutes": 0,
+"executionOrder": "afterSuccessfulGates"
+}
+},
+"deploySteps": [
+{
+"id": 9,
+"deploymentId": 4,
+"attempt": 1,
+"reason": "automated",
+"status": "notDeployed",
+"operationStatus": "PhaseFailed",
+"releaseDeployPhases": [
+{
+"id": 4,
+"phaseId": "4",
+"name": "Agent job",
+"rank": 1,
+"phaseType": "agentBasedDeployment",
+"status": "failed",
+"runPlanId": "836a5a23-492f-4f43-9627-37bfb139e3fc",
+"deploymentJobs": [
+{
+"job": {
+"id": 0,
+"timelineRecordId": "33b55406-6bb4-55b5-07dc-97b246c33285",
+"name": null,
+"status": "unknown",
+"rank": null,
+"issues": [],
+"logUrl": ""
+},
+"tasks": [
+{
+"id": 0,
+"timelineRecordId": "c60fff62-42b8-5f67-c50e-f289b3120595",
+"name": "Agent job",
+"dateStarted": "2024-08-05T12:54:26.94Z",
+"dateEnded": "2024-08-05T12:54:26.94Z",
+"startTime": "2024-08-05T12:54:26.94Z",
+"finishTime": "2024-08-05T12:54:26.94Z",
+"status": "canceled",
+"rank": 1,
+"issues": [],
+"logUrl": ""
+},
+{
+"id": 0,
+"timelineRecordId": "33b55406-6bb4-55b5-07dc-97b246c33285",
+"name": "Stage 1",
+"dateStarted": "2024-08-05T12:54:26.94Z",
+"dateEnded": "2024-08-05T12:54:26.94Z",
+"startTime": "2024-08-05T12:54:26.94Z",
+"finishTime": "2024-08-05T12:54:26.94Z",
+"status": "canceled",
+"rank": 1,
+"issues": [
+{
+"issueType": "Error",
+"message": "Value does not fall within the expected range.",
+"data": {}
+}
+],
+"logUrl": ""
+}
+]
+}
+],
+"manualInterventions": []
+}
+],
+"requestedBy": {
+"displayName": "onetocny",
+"url": "https://sps1.vssps.vsts.me/A00cfd9d3-ee6a-4b21-ad5a-649918f7fb20/_apis/Identities/049fd3b2-2440-61a3-91d0-bfeca92db114",
+"_links": {
+"avatar": {
+"href": "https://codedev.ms/onetocny/_apis/GraphProfile/MemberAvatars/msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0"
+}
+},
+"id": "049fd3b2-2440-61a3-91d0-bfeca92db114",
+"uniqueName": "onetocny@outlook-int.com",
+"imageUrl": "https://codedev.ms/onetocny/_apis/GraphProfile/MemberAvatars/msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0",
+"descriptor": "msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0"
+},
+"requestedFor": {
+"displayName": "onetocny",
+"url": "https://sps1.vssps.vsts.me/A00cfd9d3-ee6a-4b21-ad5a-649918f7fb20/_apis/Identities/049fd3b2-2440-61a3-91d0-bfeca92db114",
+"_links": {
+"avatar": {
+"href": "https://codedev.ms/onetocny/_apis/GraphProfile/MemberAvatars/msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0"
+}
+},
+"id": "049fd3b2-2440-61a3-91d0-bfeca92db114",
+"uniqueName": "onetocny@outlook-int.com",
+"imageUrl": "https://codedev.ms/onetocny/_apis/GraphProfile/MemberAvatars/msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0",
+"descriptor": "msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0"
+},
+"queuedOn": "2024-08-05T12:54:21.89Z",
+"lastModifiedBy": {
+"displayName": "Microsoft.VisualStudio.Services.ReleaseManagement",
+"id": "0000000d-0000-8888-8000-000000000000",
+"uniqueName": "0000000d-0000-8888-8000-000000000000@6b6731ae-0c90-4c7f-b165-14a22430464f",
+"descriptor": "s2s.MDAwMDAwMGQtMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDZiNjczMWFlLTBjOTAtNGM3Zi1iMTY1LTE0YTIyNDMwNDY0Zg"
+},
+"lastModifiedOn": "2024-08-05T12:54:26.983Z",
+"hasStarted": false,
+"tasks": [],
+"runPlanId": "00000000-0000-0000-0000-000000000000",
+"issues": []
+},
+{
+"id": 11,
+"deploymentId": 5,
+"attempt": 2,
+"reason": "manual",
+"status": "notDeployed",
+"operationStatus": "PhaseFailed",
+"releaseDeployPhases": [
+{
+"id": 5,
+"phaseId": "5",
+"name": "Agent job",
+"rank": 1,
+"phaseType": "agentBasedDeployment",
+"status": "failed",
+"runPlanId": "1b1b0c8f-8849-4b57-98ec-4d3b5849d6be",
+"deploymentJobs": [
+{
+"job": {
+"id": 0,
+"timelineRecordId": "ee0c0143-60fc-5d0c-a77b-8e91a9ac0fb1",
+"name": null,
+"status": "unknown",
+"rank": null,
+"issues": [],
+"logUrl": ""
+},
+"tasks": [
+{
+"id": 0,
+"timelineRecordId": "b15bdbc1-8fef-552e-fb67-4d3c855c0d89",
+"name": "Agent job",
+"dateStarted": "2024-08-05T13:05:43.5533333Z",
+"dateEnded": "2024-08-05T13:05:43.5533333Z",
+"startTime": "2024-08-05T13:05:43.5533333Z",
+"finishTime": "2024-08-05T13:05:43.5533333Z",
+"status": "canceled",
+"rank": 1,
+"issues": [],
+"logUrl": ""
+},
+{
+"id": 0,
+"timelineRecordId": "ee0c0143-60fc-5d0c-a77b-8e91a9ac0fb1",
+"name": "Stage 1",
+"dateStarted": "2024-08-05T13:05:43.5533333Z",
+"dateEnded": "2024-08-05T13:05:43.5533333Z",
+"startTime": "2024-08-05T13:05:43.5533333Z",
+"finishTime": "2024-08-05T13:05:43.5533333Z",
+"status": "canceled",
+"rank": 1,
+"issues": [
+{
+"issueType": "Error",
+"message": "Value does not fall within the expected range.",
+"data": {}
+}
+],
+"logUrl": ""
+}
+]
+}
+],
+"manualInterventions": []
+}
+],
+"requestedBy": {
+"displayName": "onetocny",
+"url": "https://sps1.vssps.vsts.me/A00cfd9d3-ee6a-4b21-ad5a-649918f7fb20/_apis/Identities/049fd3b2-2440-61a3-91d0-bfeca92db114",
+"_links": {
+"avatar": {
+"href": "https://codedev.ms/onetocny/_apis/GraphProfile/MemberAvatars/msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0"
+}
+},
+"id": "049fd3b2-2440-61a3-91d0-bfeca92db114",
+"uniqueName": "onetocny@outlook-int.com",
+"imageUrl": "https://codedev.ms/onetocny/_apis/GraphProfile/MemberAvatars/msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0",
+"descriptor": "msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0"
+},
+"requestedFor": {
+"displayName": "onetocny",
+"url": "https://sps1.vssps.vsts.me/A00cfd9d3-ee6a-4b21-ad5a-649918f7fb20/_apis/Identities/049fd3b2-2440-61a3-91d0-bfeca92db114",
+"_links": {
+"avatar": {
+"href": "https://codedev.ms/onetocny/_apis/GraphProfile/MemberAvatars/msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0"
+}
+},
+"id": "049fd3b2-2440-61a3-91d0-bfeca92db114",
+"uniqueName": "onetocny@outlook-int.com",
+"imageUrl": "https://codedev.ms/onetocny/_apis/GraphProfile/MemberAvatars/msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0",
+"descriptor": "msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0"
+},
+"queuedOn": "2024-08-05T13:05:41.117Z",
+"lastModifiedBy": {
+"displayName": "Microsoft.VisualStudio.Services.ReleaseManagement",
+"id": "0000000d-0000-8888-8000-000000000000",
+"uniqueName": "0000000d-0000-8888-8000-000000000000@6b6731ae-0c90-4c7f-b165-14a22430464f",
+"descriptor": "s2s.MDAwMDAwMGQtMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDZiNjczMWFlLTBjOTAtNGM3Zi1iMTY1LTE0YTIyNDMwNDY0Zg"
+},
+"lastModifiedOn": "2024-08-05T13:05:43.743Z",
+"hasStarted": false,
+"tasks": [],
+"runPlanId": "00000000-0000-0000-0000-000000000000",
+"issues": []
+},
+{
+"id": 13,
+"deploymentId": 6,
+"attempt": 3,
+"reason": "manual",
+"status": "notDeployed",
+"operationStatus": "PhaseFailed",
+"releaseDeployPhases": [
+{
+"id": 6,
+"phaseId": "6",
+"name": "Agent job",
+"rank": 1,
+"phaseType": "agentBasedDeployment",
+"status": "failed",
+"runPlanId": "275c369d-45ab-425a-aeec-74fa7bd31570",
+"deploymentJobs": [
+{
+"job": {
+"id": 0,
+"timelineRecordId": "c5d1a54c-154e-5b62-c77f-461e53a956c4",
+"name": null,
+"status": "unknown",
+"rank": null,
+"issues": [],
+"logUrl": ""
+},
+"tasks": [
+{
+"id": 0,
+"timelineRecordId": "2ad85a6d-bb23-5724-03f9-bd12cfb50b9a",
+"name": "Agent job",
+"dateStarted": "2024-08-05T13:06:33.4666667Z",
+"dateEnded": "2024-08-05T13:06:33.4666667Z",
+"startTime": "2024-08-05T13:06:33.4666667Z",
+"finishTime": "2024-08-05T13:06:33.4666667Z",
+"status": "canceled",
+"rank": 1,
+"issues": [],
+"logUrl": ""
+},
+{
+"id": 0,
+"timelineRecordId": "c5d1a54c-154e-5b62-c77f-461e53a956c4",
+"name": "Stage 1",
+"dateStarted": "2024-08-05T13:06:33.4666667Z",
+"dateEnded": "2024-08-05T13:06:33.4666667Z",
+"startTime": "2024-08-05T13:06:33.4666667Z",
+"finishTime": "2024-08-05T13:06:33.4666667Z",
+"status": "canceled",
+"rank": 1,
+"issues": [
+{
+"issueType": "Error",
+"message": "Value does not fall within the expected range.",
+"data": {}
+}
+],
+"logUrl": ""
+}
+]
+}
+],
+"manualInterventions": []
+}
+],
+"requestedBy": {
+"displayName": "onetocny",
+"url": "https://sps1.vssps.vsts.me/A00cfd9d3-ee6a-4b21-ad5a-649918f7fb20/_apis/Identities/049fd3b2-2440-61a3-91d0-bfeca92db114",
+"_links": {
+"avatar": {
+"href": "https://codedev.ms/onetocny/_apis/GraphProfile/MemberAvatars/msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0"
+}
+},
+"id": "049fd3b2-2440-61a3-91d0-bfeca92db114",
+"uniqueName": "onetocny@outlook-int.com",
+"imageUrl": "https://codedev.ms/onetocny/_apis/GraphProfile/MemberAvatars/msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0",
+"descriptor": "msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0"
+},
+"requestedFor": {
+"displayName": "onetocny",
+"url": "https://sps1.vssps.vsts.me/A00cfd9d3-ee6a-4b21-ad5a-649918f7fb20/_apis/Identities/049fd3b2-2440-61a3-91d0-bfeca92db114",
+"_links": {
+"avatar": {
+"href": "https://codedev.ms/onetocny/_apis/GraphProfile/MemberAvatars/msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0"
+}
+},
+"id": "049fd3b2-2440-61a3-91d0-bfeca92db114",
+"uniqueName": "onetocny@outlook-int.com",
+"imageUrl": "https://codedev.ms/onetocny/_apis/GraphProfile/MemberAvatars/msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0",
+"descriptor": "msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0"
+},
+"queuedOn": "2024-08-05T13:06:32.38Z",
+"lastModifiedBy": {
+"displayName": "Microsoft.VisualStudio.Services.ReleaseManagement",
+"id": "0000000d-0000-8888-8000-000000000000",
+"uniqueName": "0000000d-0000-8888-8000-000000000000@6b6731ae-0c90-4c7f-b165-14a22430464f",
+"descriptor": "s2s.MDAwMDAwMGQtMDAwMC04ODg4LTgwMDAtMDAwMDAwMDAwMDAwQDZiNjczMWFlLTBjOTAtNGM3Zi1iMTY1LTE0YTIyNDMwNDY0Zg"
+},
+"lastModifiedOn": "2024-08-05T13:06:33.48Z",
+"hasStarted": false,
+"tasks": [],
+"runPlanId": "00000000-0000-0000-0000-000000000000",
+"issues": []
+}
+],
+"rank": 1,
+"definitionEnvironmentId": 1,
+"environmentOptions": {
+"emailNotificationType": "OnlyOnFailure",
+"emailRecipients": "release.environment.owner;release.creator",
+"skipArtifactsDownload": false,
+"timeoutInMinutes": 0,
+"enableAccessToken": false,
+"publishDeploymentStatus": true,
+"badgeEnabled": false,
+"autoLinkWorkItems": false,
+"pullRequestDeploymentEnabled": false
+},
+"demands": [],
+"conditions": [
+{
+"name": "ReleaseStarted",
+"conditionType": "event",
+"value": "",
+"result": true
+}
+],
+"createdOn": "2024-08-05T12:54:21.89Z",
+"modifiedOn": "2024-08-05T13:06:33.473Z",
+"workflowTasks": [],
+"deployPhasesSnapshot": [
+{
+"deploymentInput": {
+"parallelExecution": {
+"parallelExecutionType": "none"
+},
+"agentSpecification": null,
+"skipArtifactsDownload": false,
+"artifactsDownloadInput": {
+"downloadInputs": []
+},
+"queueId": 1,
+"demands": [],
+"enableAccessToken": false,
+"timeoutInMinutes": 0,
+"jobCancelTimeoutInMinutes": 1,
+"condition": "succeeded()",
+"overrideInputs": {}
+},
+"rank": 1,
+"phaseType": "agentBasedDeployment",
+"name": "Agent job",
+"refName": null,
+"workflowTasks": [
+{
+"environment": {},
+"taskId": "e213ff0f-5d5c-4791-802d-52ea3e7be1f1",
+"version": "2.*",
+"name": "PowerShell Script",
+"refName": "",
+"enabled": true,
+"alwaysRun": false,
+"continueOnError": false,
+"timeoutInMinutes": 0,
+"retryCountOnTaskFailure": 0,
+"definitionType": "task",
+"overrideInputs": {},
+"condition": "succeeded()",
+"inputs": {
+"targetType": "inline",
+"filePath": "",
+"arguments": "",
+"script": "# Write your PowerShell commands here.\n\nWrite-Host \"Hello World\"\n",
+"errorActionPreference": "stop",
+"warningPreference": "default",
+"informationPreference": "default",
+"verbosePreference": "default",
+"debugPreference": "default",
+"progressPreference": "silentlyContinue",
+"failOnStderr": "false",
+"showWarnings": "false",
+"ignoreLASTEXITCODE": "false",
+"pwsh": "false",
+"workingDirectory": "",
+"runScriptInSeparateScope": "false"
+}
+}
+]
+}
+],
+"owner": {
+"displayName": "onetocny",
+"url": "https://sps1.vssps.vsts.me/A00cfd9d3-ee6a-4b21-ad5a-649918f7fb20/_apis/Identities/049fd3b2-2440-61a3-91d0-bfeca92db114",
+"_links": {
+"avatar": {
+"href": "https://codedev.ms/onetocny/_apis/GraphProfile/MemberAvatars/msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0"
+}
+},
+"id": "049fd3b2-2440-61a3-91d0-bfeca92db114",
+"uniqueName": "onetocny@outlook-int.com",
+"imageUrl": "https://codedev.ms/onetocny/_apis/GraphProfile/MemberAvatars/msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0",
+"descriptor": "msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0"
+},
+"schedules": [],
+"release": {
+"id": 4,
+"name": "Release-4",
+"url": "https://vsrm.codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_apis/Release/releases/4",
+"_links": {
+"web": {
+"href": "https://codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_release?releaseId=4&_a=release-summary"
+},
+"self": {
+"href": "https://vsrm.codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_apis/Release/releases/4"
+}
+}
+},
+"releaseDefinition": {
+"id": 1,
+"name": "New release pipeline",
+"path": "\\",
+"projectReference": null,
+"url": "https://vsrm.codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_apis/Release/definitions/1",
+"_links": {
+"web": {
+"href": "https://codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_release?definitionId=1"
+},
+"self": {
+"href": "https://vsrm.codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_apis/Release/definitions/1"
+}
+}
+},
+"releaseCreatedBy": {
+"displayName": "onetocny",
+"url": "https://sps1.vssps.vsts.me/A00cfd9d3-ee6a-4b21-ad5a-649918f7fb20/_apis/Identities/049fd3b2-2440-61a3-91d0-bfeca92db114",
+"_links": {
+"avatar": {
+"href": "https://codedev.ms/onetocny/_apis/GraphProfile/MemberAvatars/msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0"
+}
+},
+"id": "049fd3b2-2440-61a3-91d0-bfeca92db114",
+"uniqueName": "onetocny@outlook-int.com",
+"imageUrl": "https://codedev.ms/onetocny/_apis/GraphProfile/MemberAvatars/msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0",
+"descriptor": "msa.MDQ5ZmQzYjItMjQ0MC03MWEzLTkxZDAtYmZlY2E5MmRiMTE0"
+},
+"triggerReason": "ReleaseStarted",
+"timeToDeploy": 0.006216666666666667,
+"processParameters": {},
+"preDeploymentGatesSnapshot": {
+"id": 0,
+"gatesOptions": null,
+"gates": []
+},
+"postDeploymentGatesSnapshot": {
+"id": 0,
+"gatesOptions": null,
+"gates": []
+}
+}
+],
+"variables": {},
+"variableGroups": [],
+"artifacts": [],
+"releaseDefinition": {
+"id": 1,
+"name": "New release pipeline",
+"path": "\\",
+"projectReference": null,
+"url": "https://vsrm.codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_apis/Release/definitions/1",
+"_links": {
+"self": {
+"href": "https://vsrm.codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_apis/Release/definitions/1"
+},
+"web": {
+"href": "https://codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_release?definitionId=1"
+}
+}
+},
+"releaseDefinitionRevision": 4,
+"description": "",
+"reason": "manual",
+"releaseNameFormat": "Release-$(rev:r)",
+"keepForever": false,
+"definitionSnapshotRevision": 4,
+"logsContainerUrl": "https://vsrm.codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_apis/Release/releases/4/logs",
+"url": "https://vsrm.codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_apis/Release/releases/4",
+"_links": {
+"self": {
+"href": "https://vsrm.codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_apis/Release/releases/4"
+},
+"web": {
+"href": "https://codedev.ms/onetocny/110908cc-37c7-4a8c-a286-6b720265d449/_release?releaseId=4&_a=release-summary"
+}
+},
+"tags": [],
+"triggeringArtifactAlias": null,
+"projectReference": {
+"id": "110908cc-37c7-4a8c-a286-6b720265d449",
+"name": null
+},
+"properties": {}
+}

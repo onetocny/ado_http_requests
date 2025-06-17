@@ -1,0 +1,68 @@
+
+@endpointId = 262cf68a-7075-41d1-9a84-ed82aaf00a8d
+
+PUT {{base_url}}/{{organization}}/{{project}}/_apis/serviceendpoint/endpoints/{{endpointId}}?api-version=7.1
+Authorization: Basic :{{PAT}}
+Content-type: application/json
+Accept: application/json;api-version=6.0-preview.1;excludeUrls=true;enumsAsNumbers=true;msDateFormat=true;noArrayWrap=true
+
+{
+  "data": {
+    "environment": "AzureCloud",
+    "scopeLevel": "Subscription",
+    "creationMode": "Manual",
+    "identityType": "AppRegistrationManual",
+    "subscriptionId": "e7b1a4bd-47f7-4ee5-90ae-4cfb04c8aeb5",
+    "subscriptionName": "Visual Studio Enterprise"
+  },
+  "id": "262cf68a-7075-41d1-9a84-ed82aaf00a8d",
+  "name": "test manual wif",
+  "type": "azurerm",
+  "url": "https://management.azure.com/",
+  "createdBy": {
+    "displayName": "Ondrej Netocny",
+    "url": "https://spsprodwus22.vssps.visualstudio.com/A998ace4a-0206-43df-a8ea-076ae68596a9/_apis/Identities/3bf99dab-ba07-6db5-ac8c-36ec0c27c4a8",
+    "_links": {
+      "avatar": {
+        "href": "https://dev.azure.com/buildcanary/_apis/GraphProfile/MemberAvatars/aad.M2JmOTlkYWItYmEwNy03ZGI1LWFjOGMtMzZlYzBjMjdjNGE4"
+      }
+    },
+    "id": "3bf99dab-ba07-6db5-ac8c-36ec0c27c4a8",
+    "uniqueName": "onetocny@microsoft.com",
+    "imageUrl": "https://dev.azure.com/buildcanary/_apis/GraphProfile/MemberAvatars/aad.M2JmOTlkYWItYmEwNy03ZGI1LWFjOGMtMzZlYzBjMjdjNGE4",
+    "descriptor": "aad.M2JmOTlkYWItYmEwNy03ZGI1LWFjOGMtMzZlYzBjMjdjNGE4"
+  },
+  "description": "",
+  "authorization": {
+    "parameters": {
+      "tenantid": "7e527386-53a9-4ca0-8a2e-981cf1f68693",
+      "workloadIdentityFederationIssuerType": "EntraID",
+      "workloadIdentityFederationSubject": "/eid1/c/pub/t/hnNSfqlToEyKLpgc8faGkw/a/rISbSSETf0KqFyZ8ppdXmA/sc/54d02617-2ebd-42b0-b1e2-257059c4c03d/262cf68a-7075-41d1-9a84-ed82aaf00a8d",
+      "workloadIdentityFederationIssuer": "https://login.microsoftonline.com/7e527386-53a9-4ca0-8a2e-981cf1f68693/v2.0",
+      "serviceprincipalid": "ab109453-03e9-4585-8b84-7e60ba27e8c5"
+    },
+    "scheme": "WorkloadIdentityFederation"
+  },
+  "isShared": false,
+  "isOutdated": false,
+  "isReady": true,
+  "isDisabled": false,
+  "modifiedBy": {
+    "displayName": null,
+    "id": "3bf99dab-ba07-6db5-ac8c-36ec0c27c4a8"
+  },
+  "creationDate": "\/Date(1741949413087)\/",
+  "modificationDate": "\/Date(1750075324650)\/",
+  "owner": "Library",
+  "serviceEndpointProjectReferences": [
+    {
+      "projectReference": {
+        "id": "36654e28-92a5-4699-be09-a013c293f7d3",
+        "name": "rmdev"
+      },
+      "name": "test manual wif",
+      "description": ""
+    }
+  ],
+  "serviceManagementReference": null
+}

@@ -1,4 +1,4 @@
-@name = MI09
+@name = MI11
 @tenantId = 771d663d-da6c-44bd-bc0a-e9a46bc4bfb6
 @subscriptionId = d0187ece-f402-4226-8c61-7c7de4d6054a
 @scope = /subscriptions/{{subscriptionId}}

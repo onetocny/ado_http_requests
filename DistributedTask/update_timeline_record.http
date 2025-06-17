@@ -1,0 +1,31 @@
+@planUrl = https://vsrm.dev.azure.com/onetocny
+@projectId = 58f81d03-b671-4931-8676-165d7841f36b
+@hub = gates
+@planId = 7ea251f6-562c-4be0-b11a-8b568df16033
+@timelineId = 7ea251f6-562c-4be0-b11a-8b568df16033
+@authtoken = FILL_AUTH_TOKEN
+
+PATCH {{planUrl}}/{{projectId}}/_apis/distributedtask/hubs/{{hub}}/plans/{{planId}}/timelines/{{timelineId}}/records?api-version=7.1
+Authorization: Basic :{{authtoken}}
+Content-type: application/json
+
+{
+    "count": 1,
+    "value": [
+        {
+            "id": "075ceef6-b18b-4047-ba47-3250974e8529",
+            "result": "succeeded",
+            "state": "completed",
+            "finishTime": "2025-04-02 16:53:00",
+        }
+    ]
+}
+
+
+###
+
+POST {{planUrl}}/{{projectId}}/_apis/distributedtask/hubs/{{hub}}/plans/{{planId}}/events?api-version=2.0-preview.1
+Authorization: Basic :{{authtoken}}
+Content-type: application/json
+
+{ "name": "TaskCompleted", "taskId": "8aeea6e3-5c6b-4bfc-8f4c-323f8da25c21", "jobId": "297b75d8-2443-448a-b2a7-bd032fa090e5", "result": "succeeded" }
